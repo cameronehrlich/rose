@@ -21,7 +21,7 @@
 2. Start the application using Docker Compose with the following command:
 
    ```bash
-   docker-compose up
+   docker-compose up --build
    ```
 
    This command will build the image if it hasn't been built yet and start the application, mapping port 8000 on your host to port 8000 on the Docker container.
