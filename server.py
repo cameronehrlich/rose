@@ -11,8 +11,15 @@ interpreter = OpenInterpreter(
     auto_run=True,
 )
 
-@app.get("/chat")
-def chat_endpoint(message: str):
+from flask import request
+
+@app.route("/chat", methods=["GET", "POST"])
+def chat_endpoint():
+    if request.method == "POST":
+        message = request.json.get("message", "")
+    else:
+        message = request.args.get("message", "")
+
     def event_stream():
         for result in interpreter.chat(message, stream=True):
             yield f"data: {result}\n\n"
