@@ -8,31 +8,29 @@ This guide will help you build and run the application using Docker.
 
 - Ensure you have Docker installed on your system. You can download it from [Docker's official website](https://www.docker.com/products/docker-desktop).
 
-### Building the Docker Image
+### Running the Application with Docker Compose
 
 1. Open a terminal and navigate to the project directory.
 
-2. Build the Docker image using the following command:
+2. Start the application using Docker Compose with the following command:
 
    ```bash
-   docker build -t rose .
+   docker-compose up
    ```
 
-### Running the Docker Container
+   This command will build the image if it hasn't been built yet and start the application, mapping port 8000 on your host to port 8000 on the Docker container.
 
-1. After building the image, run the Docker container with the following command:
+3. Your application should now be running in a Docker container. You can access it by navigating to `http://localhost:8000` in your web browser.
 
-   ```bash
-   docker run -p 8000:8000 rose
-   ```
+### Stopping the Application
 
-   This command maps port 8000 on your host to port 8000 on the Docker container. Adjust the port numbers as needed.
+- To stop the application, press `Ctrl + C` in the terminal where Docker Compose is running, or run:
 
-2. Your application should now be running in a Docker container. You can access it by navigating to `http://localhost:8000` in your web browser.
+  ```bash
+  docker-compose down
+  ```
 
-### Stopping the Docker Container
-
-- To stop the running Docker container, press `Ctrl + C` in the terminal where the container is running.
+  This command stops and removes the containers defined in the `docker-compose.yml`.
 
 ### Additional Notes
 
