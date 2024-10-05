@@ -20,7 +20,7 @@ def chat_get_endpoint(message: str):
     return StreamingResponse(event_stream(), media_type="text/event-stream")
 
 @app.post("/ask")
-async def chat_post_endpoint(request: Request):
+async def ask_post_endpoint(request: Request):
     data = await request.json()
     message = data.get("message")
     if not message:
