@@ -15,17 +15,15 @@ This guide will help you build and run the application using Docker.
 2. Build the Docker image using the following command:
 
    ```bash
-   docker build -t your-image-name .
+   docker build -t rose .
    ```
-
-   Replace `your-image-name` with a name you want to give to your Docker image.
 
 ### Running the Docker Container
 
 1. After building the image, run the Docker container with the following command:
 
    ```bash
-   docker run -p 8000:8000 your-image-name
+   docker run -p 8000:8000 rose
    ```
 
    This command maps port 8000 on your host to port 8000 on the Docker container. Adjust the port numbers as needed.
