@@ -11,8 +11,13 @@ interpreter = OpenInterpreter(
     auto_run=True,
 )
 
-@app.get("/chat")
-def chat_get_endpoint(message: str):
+@app.route("/chat", methods=["GET", "POST"])
+async def chat_endpoint(request: Request):
+    if request.method == "POST":
+        data = await request.json()
+        message = data.get("message", "")
+    else:
+        message = request.query_params.get("message", "")
     def event_stream():
         for result in interpreter.chat(message, stream=True):
             yield f"data: {result}\n\n"
