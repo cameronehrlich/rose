@@ -21,6 +21,7 @@ def chat_get_endpoint(message: str):
 
 @app.post("/ask")
 async def ask_post_endpoint(request: Request):
+    return {"error": "BLAH BLAH"}
     data = await request.json()
     message = data.get("message")
     if not message:
