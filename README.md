@@ -2,7 +2,13 @@
 
 ## Building and Running with Docker
 
-This guide will help you build and run the application using Docker.
+1. Open a terminal and navigate to the project directory.
+
+2. Build the application using Docker Compose with the following command:
+
+   ```bash
+   docker-compose build
+   ```
 
 ### Prerequisites
 
