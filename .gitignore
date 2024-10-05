@@ -110,7 +110,6 @@ dmypy.json
 *.pid
 *.swp
 .dockerignore
-Dockerfile
 docker-compose.yml
 .docker/
 docker-compose.override.yml
