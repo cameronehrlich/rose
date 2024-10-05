@@ -80,7 +80,6 @@ celerybeat-schedule
 
 # dotenv
 .env
-.env.*
 
 # virtualenv
 .venv
@@ -110,7 +109,6 @@ dmypy.json
 *.pid
 *.swp
 .dockerignore
-docker-compose.yml
 .docker/
 docker-compose.override.yml
 
